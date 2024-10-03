@@ -1,0 +1,42 @@
+// project using appwrite 
+
+//other dependencies 
+
+1.npm i @redux/toolkit
+2.react-redux
+3.react-router-dom
+4.appwrite 
+5.@tinymce/tinymce-react
+6.html-react-parser
+7.react-hook-form 
+
+
+//environment variables
+*mistakes that people make that to correct  
+        *whenever making an environment variables it should be in the project root 
+        * putting   dot is important for making env file ".env "
+        *DONT SHIFT ENV FILE TO ANY PRODUCTION or github 
+        *can be moved to git ignore so that it shoould not shift to any github or production level
+        * so make a filee like .env.sample  because we also want the access of the variables 
+
+
+//REACT_APP_APPWRITE_URL    
+  react_app_(name)=when ever create app with create-app  used this code 
+  process.env.to.react_app_(name)= access the variables  
+
+//if created by vite react_app
+than VITE_APPWRITE(NAME)
+TO access =import.meta.env.VITE_APPWRITE_URL
+
+//ERROR CAN GET WITH SOME ONE WHEN COLLECTIONS ARE CREAATED IN DATABASE IN APPWRITE 
+GOT TO SETTING and set who can access  allow permission who can do crud operations 
+
+
+//use config file to avoid the server error while rendering the data 
+
+//vender locking :if some time want to remove the autenticatio from the appwrite there should be not any problem with application 
+so to make this services are used which exports the methods 
+
+
+//to make services make auth.js file 
+import 
