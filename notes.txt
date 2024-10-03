@@ -39,4 +39,11 @@ so to make this services are used which exports the methods
 
 
 //to make services make auth.js file 
-import 
+import conf from "../conf/conf";
+import {Client ,ID,Databases,Storage,Query,} from "appwrite"
+
+//Explanation: Services encapsulate specific pieces of logic or operations that are independent of the user interface or other components.
+Why it's important: By separating responsibilities, services help keep your code modular and organized. This makes it easier to manage, maintain, and extend functionality without affecting other parts of the system.
+Reusability
+Explanation: Services are designed to be reusable throughout different parts of the application.
+Why it's important: Instead of repeating the same logic in multiple places (which can lead to errors and inconsistencies), you centralize it in one service. This promotes DRY (Don’t Repeat Yourself) principles.

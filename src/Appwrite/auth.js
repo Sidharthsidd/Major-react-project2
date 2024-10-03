@@ -3,7 +3,7 @@ import {Client,Account,ID} from "appwrite"
 
 export class AuthServices{
     client =new Client();
-    accouunt;
+    account;
 
     constructor(){
         this.client
