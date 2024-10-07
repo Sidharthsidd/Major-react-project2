@@ -2,7 +2,7 @@ import conf from "../conf/conf";
 import {Client ,ID,Databases,Storage,Query,} from "appwrite"
 
 
-//these all are thaken from the document of appwrite 
+//these all are taken from the document of appwrite 
 //and this methood is used in production level so that we can access the data from the obbject easily 
 
 export class Service{

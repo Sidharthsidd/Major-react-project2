@@ -47,3 +47,95 @@ Why it's important: By separating responsibilities, services help keep your code
 Reusability
 Explanation: Services are designed to be reusable throughout different parts of the application.
 Why it's important: Instead of repeating the same logic in multiple places (which can lead to errors and inconsistencies), you centralize it in one service. This promotes DRY (Don’t Repeat Yourself) principles.
+
+
+//in the production level the input is made separately components so that it can be reuseable 
+how do you  make it ?
+*make a file container 
+*pass the children prop 
+//inproduction level a comman button is used so that we can use button anywhere 
+
+
+//rarelyused function used with the hooks or it is a function combined fro the useref {forwardref }
+This is useful when you want to forward a ref from a parent component to a child component, especially for managing focus, DOM manipulation, or integrating third-party libraries.
+const Input=React.forwardRef(function Input({
+    label,
+    type="text",
+    className="",
+    ...props
+},ref)
+
+
+//Link jahape ho uddhar se hi direct jasakte ho click karke 
+
+//react-hook-form
+
+// email validation method 
+
+<Input
+                label="Email: "
+                placeholder="Enter your email"
+                type="email"
+                {...register("email", {
+                    required: true,
+                    validate: {
+                        matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                        "Email address must be a valid address",
+                  
+
+
+
+///Authlayout file 
+an mechnism how pages and routes protected
+uth layout file is used to structure and manage the layout of authentication-related pages, such as login, registration, password reset, etc. Here's why frameworks often utilize an auth layout file:
+
+basicaly we make ea container 
+
+  //todo make it more easy to understand   methods for this 
+          
+          // if (authStatus===true ){
+          //   navigate("/")
+          // }else if (authStatus===false){
+          //   navigate("/login")
+          // }
+          // let authvalue =authStatus===true ?true:false
+          if(authentication && authStatus!==authentication){
+            navigate("./login")
+          }else if (!authentication&& authStatus!==authentication){
+            navigate("/")
+          }setloader(false)
+
+
+        },[authStatus,navigate,authentication])
+
+
+///import { Editor } from '@tinymce/tinymce-react'
+
+<Editor > as a values intialvalue=bydefault what want to render 
+init after intial want you want tot want  init ={
+  branding :false,hieght :500,menubar:true,plugins:[adlist autolink list  vaisialblocks code full screen ],
+
+}  tootlbar:[] 
+
+
+problem with <Editor >== editor is designed in the separeate place so how we will get the reference of the editor should learn then {controller } 
+
+
+//controller import these as a children to use the controller ({name ,control,labeldafaultValue =""}) 
+=>how to use it 
+<Controller 
+name ={name \\ content  }
+control ={control}
+render={({field:{onchange}})=>(
+
+)}
+/> 
+
+
+///slugtransform     where adding an - when user leacve a space betn the word 
+
+//method by regex   === if value && typeof ==='string'{
+  retuen value .trim .tolowerCase() .replace(/^[a-z A-Z\d\s]+/g,"-")
+}  or   .replace(/\s/g,'-')
+
+//how to use this above 
