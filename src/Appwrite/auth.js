@@ -8,32 +8,50 @@ export class AuthServices{
     constructor(){
         this.client
         .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteeProjectId)
+        .setProject(conf.appwriteProjectId)
          this.account =new Account(this.client)
     }
     
-    async  createAccount({email,password,name}){
+    async createAccount({ email, password, name }) {
         try {
-            const userAccount=await this.account.create(ID.unique(),email,password,name);
-            if(userAccount){
-                //call another method 
-                
-            }else{
-                return userAccount;
+            // Attempt to create a new account
+            const userAccount = await this.account.create(ID.unique(), email, password, name);
+            
+            if (userAccount) {
+                // Call another method if needed after account creation
+                console.log("Account created successfully:", userAccount);
+                // You can trigger further actions here
+            } else {
+                return userAccount; // This may be redundant as successful account creation is handled above
             }
-
-        }catch (error){
-            throw error ;
+        } catch (error) {
+            // If account creation fails (e.g., duplicate email)
+            if (error.code === 409) {
+                console.error("Conflict: Account with this email already exists.");
+                // Return or handle the specific error here (e.g., inform the user)
+            } else {
+                console.error("Error creating account:", error);
+                throw error; // Re-throw the error to be handled elsewhere
+            }
         }
     }
-    async login({email,password}){
-        try{
-            await this.account.createEmailSession(email,password);
+    
+    async login({ email, password }) {
+        try {
+            console.log("Logging in with:", email, password); // Check the credentials being passed
+            return await this.account.createEmailPasswordSession(email, password);
+        } catch (error) {
+            if (error.code === 401) {
+                console.error("Unauthorized: Incorrect email or password.");
 
-        }catch (error){
-            throw error;
+            } else {
+                console.error("Error during login:", error);
+                throw error;
+            }
         }
     }
+    
+
 
     async getCurrentUser(){
         try{

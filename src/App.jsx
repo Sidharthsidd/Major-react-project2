@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
 import './App.css'
 import { useState } from 'react'
-import { logout } from './Store/authSlice'
+import { logout ,login} from './Store/authSlice'
 import  {Header,Footer}  from './components/index'
 import { useEffect } from 'react'
 import authServices from './appwrite/auth'
